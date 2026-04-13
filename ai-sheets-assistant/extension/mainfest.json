@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "AI Sheets Assistant MVP",
+  "version": "0.1",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://docs.google.com/spreadsheets/*"
+  ],
+  "background": {
+    "service_worker": "src/background.ts"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/spreadsheets/*"],
+      "js": ["src/content.ts"]
+    }
+  ]
+}
