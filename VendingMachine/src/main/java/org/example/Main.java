@@ -22,5 +22,39 @@ public class Main {
         vm.dispense();
         vm.printStatus();
 
+        System.out.println("\n===Buy Coke, insert excess money===");
+        vm.insertCoin(20);
+        vm.insertCoin(20);
+        vm.selectProduct("C1");
+        vm.dispense();
+
+        System.out.println("\n ===Insufficient funds===");
+        vm.insertCoin(10);
+        vm.selectProduct("A1");
+        vm.dispense();
+
+
+        // ── Try operations in wrong state ──
+        System.out.println("\n=== Invalid ops in IDLE ===");
+        vm.dispense();
+        vm.selectProduct("A1");
+
+        // ── Drain stock → out of stock ──
+        System.out.println("\n=== Last item → triggers OUT_OF_STOCK ===");
+        vm.insertCoin(20);
+        vm.selectProduct("A1");  // last chips
+        vm.dispense();           // machine becomes empty
+        vm.printStatus();
+
+        // Try to buy when out of stock
+        vm.insertCoin(20);       // should be rejected
+
+        // ── Restock ──
+        System.out.println("\n=== Restock ===");
+        vm.restock(new Product("A1", "Lays Chips", 20.0), 3);
+        vm.printStatus();
+
+
+
     }
 }
