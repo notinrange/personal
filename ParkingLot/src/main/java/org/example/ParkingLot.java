@@ -20,7 +20,7 @@ public class ParkingLot {
         this.activeTickets = new HashMap<>();
     }
 
-    public static ParkingLot getInstance(String name){
+    public static synchronized ParkingLot getInstance(String name){
         if(instance == null){
             instance = new ParkingLot(name);
         }

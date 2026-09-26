@@ -3,7 +3,7 @@ package org.example;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
         VendingMachine vm = VendingMachine.getInstance();
 
         Product chips = new Product("A1","Lays Chips",20.0);
@@ -58,3 +58,20 @@ public class Main {
 
     }
 }
+// mvn compile
+// mvn clean compile
+
+// insided package -> java -cp target\classes org.example.Main
+
+//  git clone git@github-personal:notinrange/personal.git
+// ssh -T git@github-personal
+
+
+// For repositories already cloned, configure the account once:
+// git remote set-url origin git@github-personal:notinrange/personal.git
+
+
+//   git remote -v
+//   git config user.name "notinrange"
+//   git config user.email "rahulkumarpoddar0703@gmail.com"
+//   ssh -T git@github-personal

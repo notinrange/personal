@@ -40,7 +40,4 @@ public class Inventory {
             System.out.println("    " + p + " | qty=" + stock.get(code));
         });
     }
-
-
-
 }
